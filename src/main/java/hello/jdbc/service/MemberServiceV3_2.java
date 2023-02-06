@@ -52,14 +52,4 @@ public class MemberServiceV3_2 {
             throw new IllegalStateException("이체중 예외 발생");
         }
     }
-
-    private static void release(Connection con) {
-        if (con != null) {
-            try {
-                con.setAutoCommit(true); // 트랜젝션 종료
-            } catch (Exception e) {
-                log.info("error", e);
-            }
-        }
-    }
 }
